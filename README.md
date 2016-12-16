@@ -30,4 +30,4 @@ Tidak masalah jika kamu memakai Alat ini untuk menghasilkan database kodepos yan
 * http://python-requests.org
 
 ## 
-## Author: [Agus Ibrahim](http://mynameisagoes)
+## Author: [Agus Ibrahim](http://fb.me/mynameisagoes)
