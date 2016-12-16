@@ -21,10 +21,13 @@ python kodepos.py <buffer> <out>
 Buffer secara default berisi 1000, dan out defaultnya data.csv
 ## Keterbatasan
 Ini bukanlah download instan, tapi data perlu diolah agar menjadi data yang bersih sehingga siap untuk digunakan. Jadi, proses akan sedikit memakan waktu. Dan mungkin saja akan terjadi error dimasa mendatang dikarenakan perubahan data halaman web dari www.nomor.net
+## Lisensi
+Tidak masalah jika kamu memakai Alat ini untuk menghasilkan database kodepos yang akan digunakan di Aplikasi kamu. Tidak ada royaliti, manfaatkan saja. Setidaknya saya sudah turut serta dalam mencerdaskan Indonesia
 ## Credits
 * http://www.nomor.net
 * https://github.com/rufuspollock/csv2sqlite
 * http://www.crummy.com/software/BeautifulSoup
 * http://python-requests.org
+
 ## 
 ## Author: [Agus Ibrahim](http://mynameisagoes)
