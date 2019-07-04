@@ -43,9 +43,9 @@ def parse(ss):
 
 
 while True:
-    # if ke>1: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&urut=8&asc=0001000&sby=000000&no1=%s&no2=%s&kk=%s"%(perpage, (perpage*(ke-2))+1, ((perpage*(ke-1))+1)-1, ke)
-    # else: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&sby=000000&asc=0001000&urut=8"%perpage
-    w = "https://www.nomor.net/_kodepos.php?_i=desa-kodepos&sby=000000&daerah=Desa-Bakongan-Kab.-Aceh%20Selatan&jobs=Keude%20Bakongan"
+    # w = "https://www.nomor.net/_kodepos.php?_i=desa-kodepos&sby=000000&daerah=Desa-Bakongan-Kab.-Aceh%20Selatan&jobs=Keude%20Bakongan"
+    if ke>1: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&urut=8&asc=0001000&sby=000000&no1=%s&no2=%s&kk=%s"%(perpage, (perpage*(ke-2))+1, ((perpage*(ke-1))+1)-1, ke)
+    else: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&sby=000000&asc=0001000&urut=8"%perpage
     c = requests.get(w, headers=headers).content
     if c.find("#ccffff") < 1:
         break
