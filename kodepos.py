@@ -24,7 +24,8 @@ arg = sys.argv
 mydir = os.path.dirname(__file__)
 ke, x = 1, 0
 perpage = len(arg) > 1 and (arg[1].isdigit() and int(arg[1]) or 1000) or 1000
-fname = len(arg) > 2 and arg[2] or "data.csv"
+limitpage = len(arg) > 2 and (arg[2].isdigit() and int(arg[2]) or 84) or 84
+fname = len(arg) > 3 and arg[3] or "data.csv"
 
 headers = {'User-Agent': 'Mozilla/5.0 AgusIbrahim/45265'}
 f = open(os.path.join(mydir, fname),  "w")
@@ -43,11 +44,11 @@ def parse(ss):
 
 
 while True:
-    # w = "https://www.nomor.net/_kodepos.php?_i=desa-kodepos&sby=000000&daerah=Desa-Bakongan-Kab.-Aceh%20Selatan&jobs=Keude%20Bakongan"
     if ke>1: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&urut=8&asc=0001000&sby=000000&no1=%s&no2=%s&kk=%s"%(perpage, (perpage*(ke-2))+1, ((perpage*(ke-1))+1)-1, ke)
     else: w="https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=%s&sby=000000&asc=0001000&urut=8"%perpage
-    c = requests.get(w, headers=headers).content
-    if c.find("#ccffff") < 1:
+    c = requests.get(w, headers=headers).text
+    print(c)
+    if c.find("#ccffff") < 1 or ke > limitpage:
         break
     parse(c)
     ke += 1
